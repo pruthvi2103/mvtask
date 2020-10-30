@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import {MainLayout} from './components/layouts/MainLayout';
+import {Sidebar} from './components/Sidebar';
+import {Content} from './components/Content';
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+   <MainLayout>
+     <h1>Hellpo</h1>
+     <Sidebar/>
+     <Content/>
+     </MainLayout>
   </React.StrictMode>,
   document.getElementById('root')
 );
