@@ -9,10 +9,18 @@ color:#fff;
 cursor:pointer;
 font-weight:500;
 `;
-export const CTAButton = ({message,icon}) => {
+const Icon = styled.img`
+width:18px;
+height:18px;
+display: inline-flex;
+  align-self: center;
+  top: .125em;
+  position: relative;
+`;
+export const CTAButton = ({message,icon,clickAction}) => {
     return (
-        <CTAWrapper>
-            {message}
+        <CTAWrapper onClick={() => clickAction()}>
+          {icon && (<Icon src={icon}></Icon>)}  {message}
         </CTAWrapper>
     )
 }

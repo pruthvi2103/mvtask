@@ -5,10 +5,11 @@ import reportWebVitals from './reportWebVitals';
 import {MainLayout} from './components/layouts/MainLayout';
 import {Sidebar} from './components/Sidebar';
 import {Content} from './components/Content';
+import { Navbar } from './components/Navbar';
 ReactDOM.render(
   <React.StrictMode>
    <MainLayout>
-     <h1>Hellpo</h1>
+     <Navbar/>
      <Sidebar/>
      <Content/>
      </MainLayout>
