@@ -2,10 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const CTAWrapper = styled.span`
-background:#867EFF;
+
+background:${(props) => {return props.isSecondary ? '#fff' :'#867EFF'}};
 padding:12px 48px;
 border-radius:8px;
-color:#fff;
+color:${(props) => {return props.isSecondary ? '#2a2e43' :'#fff'}};
 cursor:pointer;
 font-weight:500;
 `;
@@ -17,9 +18,9 @@ display: inline-flex;
   top: .125em;
   position: relative;
 `;
-export const CTAButton = ({message,icon,clickAction}) => {
+export const CTAButton = ({message,icon,clickAction,secondary}) => {
     return (
-        <CTAWrapper onClick={() => clickAction()}>
+        <CTAWrapper isSecondary={secondary} onClick={() => clickAction()}>
           {icon && (<Icon src={icon}></Icon>)}  {message}
         </CTAWrapper>
     )
