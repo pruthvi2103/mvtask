@@ -74,8 +74,8 @@ const StepSubHeading = styled.p`
 `;
 const ContentActions = styled.div`
   position: absolute;
-  bottom: 120px;
-  right: 120px;
+  bottom: 10%;
+  right: 5%;
   display: flex;
 `;
 const StepStatus = styled.div`
