@@ -10,6 +10,7 @@ import { Toast } from "./common/Toast";
 import { CustomInput } from "../components/common/styledComponents";
 const ContentWrapper = styled.div`
   padding: 100px;
+  position:relative;
 `;
 const BorderdWrapper = styled.div`
   border-radius: 8px;
