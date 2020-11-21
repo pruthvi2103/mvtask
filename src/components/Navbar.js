@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import styled from "styled-components";
+// Local Imports
+import { debounce } from "../utils/debounce";
 //Component imports
 import { NotificationWithBadge } from "./common/NotificationWithBadge";
 import { Divider } from "../components/common/styledComponents";
@@ -49,6 +51,16 @@ const Icon = styled.img`
   height: 24px;
 `;
 export const Navbar = () => {
+  const callAPI = () => {
+    console.log("API CAlled!!!");
+  };
+  const debouncedAPI = useCallback(debounce(1000, callAPI), []);
+  const [searchQuery, setSearchQuery] = useState("");
+  const searchTerm = function (e) {
+    setSearchQuery(e.target.value);
+    debouncedAPI();
+  };
+
   return (
     <NavWrapper>
       <Logo src={LogoS} />
@@ -56,7 +68,11 @@ export const Navbar = () => {
       <NavActionsWrapper>
         <NavActionHolder>
           <Icon src={SearchIcon} />
-          <SearchInput placeholder={"Search e.g. hosts, configurations"} />
+          <SearchInput
+            value={searchQuery}
+            onChange={searchTerm}
+            placeholder={"Search e.g. hosts, configurations"}
+          />
         </NavActionHolder>
         <Divider />
         <NavActionHolder>
